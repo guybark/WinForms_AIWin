@@ -16,7 +16,9 @@ namespace WinForms_NetFramework_AIWinFailures
         {
             InitializeComponent();
 
-            dateTimePicker1.AccessibleName = labelDate.Text;
+            dateTimePicker1.AccessibleName = labelBirthday.Text;
+
+            SetupDataGridView();
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
@@ -24,9 +26,33 @@ namespace WinForms_NetFramework_AIWinFailures
             this.Close();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void SetupDataGridView()
         {
+            testDataGridView.Columns.Add(
+                new DataGridViewTextBoxColumn());
+            testDataGridView.Columns.Add(
+                new DataGridViewButtonColumn());
+            testDataGridView.Columns.Add(
+                new DataGridViewCheckBoxColumn());
+            testDataGridView.Columns.Add(
+                new DataGridViewComboBoxColumn());
+            testDataGridView.Columns.Add(
+                new DataGridViewImageColumn());
+            testDataGridView.Columns.Add(
+                new DataGridViewLinkColumn());
 
+            for (int i = 0; i < testDataGridView.Columns.Count; ++i)
+            {
+                testDataGridView.Columns[i].Width = 200;
+            }
+
+            testDataGridView.Rows.Add();
+            testDataGridView.Rows.Add();
+            testDataGridView.Rows.Add();
+            testDataGridView.Rows.Add();
+            testDataGridView.Rows.Add();
+
+            testDataGridView.ScrollBars = ScrollBars.Both;
         }
     }
 }

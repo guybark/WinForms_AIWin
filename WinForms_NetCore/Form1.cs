@@ -15,11 +15,44 @@ namespace WinForms_NetCore
         public Form1()
         {
             InitializeComponent();
+
+            dateTimePicker1.AccessibleName = labelBirthday.Text;
+
+            SetupDataGridView();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void SetupDataGridView()
+        {
+            testDataGridView.Columns.Add(
+                new DataGridViewTextBoxColumn());
+            testDataGridView.Columns.Add(
+                new DataGridViewButtonColumn());
+            testDataGridView.Columns.Add(
+                new DataGridViewCheckBoxColumn());
+            testDataGridView.Columns.Add(
+                new DataGridViewComboBoxColumn());
+            testDataGridView.Columns.Add(
+                new DataGridViewImageColumn());
+            testDataGridView.Columns.Add(
+                new DataGridViewLinkColumn());
+
+            for (int i = 0; i < testDataGridView.Columns.Count; ++i)
+            {
+                testDataGridView.Columns[i].Width = 200;
+            }
+
+            testDataGridView.Rows.Add();
+            testDataGridView.Rows.Add();
+            testDataGridView.Rows.Add();
+            testDataGridView.Rows.Add();
+            testDataGridView.Rows.Add();
+
+            testDataGridView.ScrollBars = ScrollBars.Both;
         }
     }
 }
